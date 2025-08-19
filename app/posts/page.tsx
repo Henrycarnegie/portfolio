@@ -12,27 +12,34 @@ type Posts = {
 };
 
 const Posts = async () => {
-    const resp = await fetch (`${process.env.base_url}`)
-    const  data: Posts[] = await resp.json()
+    const baseUrl = process.env.base_url;
 
-   return (
-      <div className="h-screen flex flex-col justify-center items-center gap-10 bg-gradient-to-br from-indigo-600 via-fuchsia-800 to-indigo-900">
-         <Link href="/" className="font-semibold flex items-center gap-1 text-cyan-100">
-            <ArrowLeftCircle className="size-6" />
-            Kembali
-         </Link>
-         <h1>Halaman Postingan</h1>
-         <CardList>
-            {data.map((index) => (
-               <Card
-                  key={index.id}
-                  cardId={index.userId}
-                  cardTitle={index.title}
-                  cardDescription={index.body}
-               />
-            ))}
-         </CardList>
-      </div>
-   );
+    if (!baseUrl) {
+        throw new Error("base_url is not defined");
+    }
+
+    const resp = await fetch(baseUrl);
+    const data: Posts[] = await resp.json();
+
+    return (
+        <div className="h-screen flex flex-col justify-center items-center gap-10 bg-gradient-to-br from-indigo-600 via-fuchsia-800 to-indigo-900">
+            <Link href="/" className="font-semibold flex items-center gap-1 text-cyan-100">
+                <ArrowLeftCircle className="size-6" />
+                Kembali
+            </Link>
+            <h1>Halaman Postingan</h1>
+            <CardList>
+                {data.map((post) => (
+                    <Card
+                        key={post.id}
+                        cardId={post.userId}
+                        cardTitle={post.title}
+                        cardDescription={post.body}
+                    />
+                ))}
+            </CardList>
+        </div>
+    );
 };
+
 export default Posts;
