@@ -14,7 +14,7 @@ const Tooltip = ({ label, image }: TooltipProps) => {
             {label} 
          </span>
 
-         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 p-2 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 w-fit">
+         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 p-2 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 w-fit">
             <div className="flex justify-center items-center text-center w-10 h-10">{image}</div>
          </div>
       </div>

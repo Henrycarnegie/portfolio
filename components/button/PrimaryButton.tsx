@@ -4,23 +4,20 @@ import React from "react";
 
 type PrimaryButtonProps = {
    className?: string;
-   cardId?: number;
+   type: string;
    children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const PrimaryButton = ({
    className = "",
+   type,
    children,
-   cardId,
    ...props
 }: PrimaryButtonProps) => {
-   const handleClick = () => {
-        alert(`Data Post ${cardId}`)
-    }
    return (
       <button
-         className={`bg-cyan-50/30 text-white border border-white/55 hover:bg-gray-800 font-semibold rounded-lg px-6 py-3 shadow-lg transition-colors ${className}`}
-         onClick={handleClick}
+         type={type}
+         className={`bg-purple-700 hover:bg-gradient-to-tl from-indigo-700 via-purple-700 to-pink-700 text-pink-400 hover:text-yellow-400 text-sm gap-2 inline-flex items-center font-semibold rounded-lg px-6 py-3 shadow-lg transition-colors cursor-pointer ${className}`}
          {...props}
       >
          {children}

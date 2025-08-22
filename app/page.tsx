@@ -2,8 +2,11 @@ import Header from "@/components/header/Header";
 import Tooltip from "@/components/tooltip/Tooltip";
 import CardExperience from "./components/CardExperience";
 import techStack from "./lib/TechStack";
+import InputLabel from "@/components/label/InputLabel";
+import CardProject from "./components/CardProject";
+import TextInput from "@/components/input/TextInput";
 
-export default function Home({}) {
+export default function Home() {
    const header = [
       { toSection: "#beranda", label: "Beranda" },
       { toSection: "#pengalaman", label: "Experience" },
@@ -44,9 +47,10 @@ export default function Home({}) {
                </div>
             </div>
          </section>
+
          <section
             id="pengalaman"
-            className="px-4 md:px-40 pt-10 flex flex-col justify-center items-center"
+            className="px-6 lg:px-40 pt-10 flex flex-col justify-center items-center"
          >
             <div className="pt-10 flex flex-col gap-4 w-full">
                <h1 className="text-center text-xl">
@@ -73,16 +77,16 @@ export default function Home({}) {
                            instansi="Celerates School"
                            tglExperience="Feb 2024 - Jul 2024"
                         />
-                        <CardExperience
+                        {/* <CardExperience
                            imgSrc="/logo_new_school.svg"
                            imgAlt="Finding.."
                            label="Finding new education.."
                            instansi="Finding new school"
                            tglExperience="Not identified yet"
-                        />
+                        /> */}
                      </div>
                   </div>
-                  <div className="md:col-span-4 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border border-gray-600/80 rounded-2xl p-4 max-h-80 overflow-y-scroll">
+                  <div className="md:col-span-4 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border border-gray-600/80 rounded-2xl p-4 max-h-80 overflow-y-scroll custom-scrollbar">
                      <h2 className="text-gray-400 mb-4">Experience :</h2>
                      <div className="flex flex-col gap-3">
                         <CardExperience
@@ -104,9 +108,26 @@ export default function Home({}) {
                </div>
             </div>
          </section>
+
          <section
-            id="pengalaman"
-            className="px-4 md:px-40 pt-10 flex flex-col justify-center items-center"
+            id="projects"
+            className="px-6 lg:px-40 py-20 flex flex-col justify-center bg-gradient-to-b from-gray-950 via-gray-900 to-black"
+         >
+            <div className="text-start mb-12">
+               <h1 className="text-xl text-gray-400">enjoy</h1>
+               <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-yellow-300 font-bold">
+                  My Projects
+               </span>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <CardProject />
+            </div>
+         </section>
+
+         <section
+            id="contact"
+            className="px-6 lg:px-40 pt-10 flex flex-col justify-center items-center"
          >
             <div className="pt-10 flex flex-col gap-4 w-full">
                <h1 className="text-center text-xl">
@@ -124,72 +145,49 @@ export default function Home({}) {
                         className="flex flex-col gap-4"
                      >
                         <div className="flex flex-col">
-                           <label htmlFor="name" className="text-gray-400 mb-1">
-                              Name
-                           </label>
-                           <input
-                              type="text"
+                           <InputLabel labelFor="name">Your Name?</InputLabel>
+                           <TextInput
                               id="name"
                               name="name"
-                              placeholder="Your name"
-                              required
-                              className="bg-gray-900 text-gray-200 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                              placeholder="Write it in here..."
                            />
                         </div>
 
                         <div className="flex flex-col">
-                           <label
-                              htmlFor="email"
-                              className="text-gray-400 mb-1"
-                           >
-                              Email
-                           </label>
-                           <input
-                              type="email"
+                           <InputLabel labelFor="email">And email?</InputLabel>
+                           <TextInput
                               id="email"
                               name="email"
-                              placeholder="you@example.com"
-                              required
-                              className="bg-gray-900 text-gray-200 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                              placeholder="Drop your email..."
                            />
                         </div>
 
                         <div className="flex flex-col">
-                           <label
-                              htmlFor="subject"
-                              className="text-gray-400 mb-1"
-                           >
-                              Subject
-                           </label>
-                           <input
-                              type="text"
+                           <InputLabel labelFor="subject">
+                              What&apos;s the topic?
+                           </InputLabel>
+                           <TextInput
                               id="subject"
                               name="subject"
-                              placeholder="Subject"
-                              className="bg-gray-900 text-gray-200 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                              placeholder="Spill the topic..."
                            />
                         </div>
 
                         <div className="flex flex-col">
-                           <label
-                              htmlFor="message"
-                              className="text-gray-400 mb-1"
-                           >
-                              Message
-                           </label>
-                           <textarea
+                           <InputLabel labelFor="message">
+                              Write your intention?
+                           </InputLabel>
+                           <TextInput
+                              textArea
                               id="message"
                               name="message"
-                              placeholder="Your message..."
-                              rows={5}
-                              required
-                              className="bg-gray-900 text-gray-200 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                              placeholder="Tell me all your intention or everything..."
                            />
                         </div>
 
                         <button
                            type="submit"
-                           className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+                           className="bg-purple-700 hover:bg-gradient-to-tl from-indigo-700 via-purple-700 to-pink-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
                         >
                            Send Message
                         </button>
