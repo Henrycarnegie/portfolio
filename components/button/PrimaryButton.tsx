@@ -4,7 +4,7 @@ import React from "react";
 
 type PrimaryButtonProps = {
    className?: string;
-   type: string;
+   type?: string;
    children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
