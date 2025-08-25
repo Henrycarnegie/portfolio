@@ -6,8 +6,10 @@ export const fetchProjects = async () => {
    return res.json();
 };
 
+// services/projectService.ts
 export const createProject = async (project: {
-   name: string;
+   projectName: string;
+   category: string;
    description: string;
 }) => {
    const res = await fetch(BASE_URL, {
@@ -21,7 +23,7 @@ export const createProject = async (project: {
 
 export const updateProject = async (
    id: number,
-   project: { name: string; description: string }
+   project: { projectName: string; category: string; description: string }
 ) => {
    const res = await fetch(`${BASE_URL}/${id}`, {
       method: "PATCH",
