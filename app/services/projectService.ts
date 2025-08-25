@@ -6,7 +6,6 @@ export const fetchProjects = async () => {
    return res.json();
 };
 
-// services/projectService.ts
 export const createProject = async (project: {
    projectName: string;
    category: string;
