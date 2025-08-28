@@ -21,7 +21,10 @@ export default function Home() {
             id="beranda"
             className="px-4 md:px-40 pt-10 flex flex-col justify-center items-center"
          >
-            <div className="border">Software Developer</div>
+            <caption className="flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500 text-sm md:text-base font-medium text-transparent bg-clip-text bg-yellow-300 shadow-md hover:scale-105 transition-transform duration-300">
+               Software Developer
+            </caption>
+
             <div className="pt-10 flex flex-col gap-4 max-w-fit">
                <h1 className="text-center text-4xl">
                   Hello! <br />
@@ -52,7 +55,7 @@ export default function Home() {
             id="pengalaman"
             className="px-6 lg:px-40 pt-10 flex flex-col justify-center items-center"
          >
-            <div className="pt-10 flex flex-col gap-4 w-full">
+            <div className="pt-10 flex flex-col gap-4 w-full ">
                <h1 className="text-center text-xl">
                   Sneak Peak <br />
                   <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-yellow-300 font-bold">
@@ -77,13 +80,6 @@ export default function Home() {
                            instansi="Celerates School"
                            tglExperience="Feb 2024 - Jul 2024"
                         />
-                        {/* <CardExperience
-                           imgSrc="/logo_new_school.svg"
-                           imgAlt="Finding.."
-                           label="Finding new education.."
-                           instansi="Finding new school"
-                           tglExperience="Not identified yet"
-                        /> */}
                      </div>
                   </div>
                   <div className="md:col-span-4 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border border-gray-600/80 rounded-2xl p-4 max-h-80 overflow-y-scroll custom-scrollbar">
