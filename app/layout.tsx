@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
+import { Asap, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 
 const be_vietnam_pro = Be_Vietnam_Pro({
+   subsets: ["latin"],
+   weight: ["100", "200", "300", "400", "500", "600", "700"],
+   display: "swap",
+});
+
+const asap = Asap({
    subsets: ["latin"],
    weight: ["100", "200", "300", "400", "500", "600", "700"],
    display: "swap",
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
-         <body className={`${be_vietnam_pro.className} antialiased`}>
+         <body className={`${asap.className} ${be_vietnam_pro.className} antialiased`}>
             {children}
          </body>
       </html>

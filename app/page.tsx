@@ -5,6 +5,7 @@ import techStack from "./lib/TechStack";
 import InputLabel from "@/components/label/InputLabel";
 import CardProject from "./components/CardProject";
 import TextInput from "@/components/input/TextInput";
+import Image from "next/image";
 
 export default function Home() {
    const header = [
@@ -19,51 +20,77 @@ export default function Home() {
          <Header dataHeader={header} />
          <section
             id="beranda"
-            className="px-4 md:px-40 pt-10 flex flex-col justify-center items-center"
+            className="px-4 md:px-40 pt-24 flex flex-col justify-center items-center"
          >
-            <caption className="flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500 text-sm md:text-base font-medium text-transparent bg-clip-text bg-yellow-300 shadow-md hover:scale-105 transition-transform duration-300">
-               Software Developer
-            </caption>
-
-            <div className="pt-10 flex flex-col gap-4 max-w-fit">
-               <h1 className="text-center text-4xl">
-                  Hello! <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-yellow-300 font-bold">
-                     I&apos;m, Henry Carnegie
+            <div className="flex flex-col gap-24 text-center">
+               <div className="flex flex-col">
+                  <span className="font-be_vietnam_pro text-2xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-emerald-300 font-bold">
+                     Designer & Frontend Developer
                   </span>
-               </h1>
-               <div className="text-gray-400 text-base text-center max-w-[65rem] leading-8">
-                  I’m Henry Carnegie, a Software Developer and UI/UX Designer.
-                  Currently pursuing my studies at Institut Teknologi Sumatera
-                  (ITERA), Faculty of Technology and Industry, I have experience
-                  building dynamic, responsive websites using{" "}
-                  {techStack.map((index) => (
-                     <Tooltip
-                        image={index.image}
-                        label={index.label}
-                        key={index.label}
-                     />
-                  ))}
-                  Skilled in designing interactive interfaces, implementing CRUD
-                  functionality, and solving problem for stakeholder also
-                  creating great user experience for modern web applications.
+                  <span className="font-be_vietnam_pro text-lg text-gray-500 font-bold">
+                     I design and code to solve the problem, and I love what I
+                     do.
+                  </span>
                </div>
+               <Image
+                  className="rounded-full object-cover object-top h-48 mx-auto mb-2"
+                  src="/profile-picture.png"
+                  alt="Logo"
+                  width={200}
+                  height={150}
+               />
+            </div>
+
+            <div className="flex max-w-fit pt-28">
+               <Image
+                  className="mx-auto"
+                  src="/hero-devices.svg"
+                  alt="Logo"
+                  width={1000}
+                  height={150}
+               />
             </div>
          </section>
-
+         <section
+            id="intro"
+            className="bg-gradient-to-t from-slate-950/10 to-slate-950/100 border-t-8 border-b-8 border-purple-500 rounded-2xl mx-6 lg:mx-40 py-10 flex flex-col justify-center items-center"
+         >
+            <h1 className="text-center">
+               Hi! <br />
+               <span className="text-2xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-yellow-300 font-bold">
+                  I&apos;m, Henry Carnegie
+               </span>
+            </h1>
+            <div className="text-gray-100 text-base text-center max-w-[65rem] leading-8 mt-2">
+               I’m Henry Carnegie, a Software Developer and UI/UX Designer.
+               Currently pursuing my studies at Institut Teknologi Sumatera
+               (ITERA), Faculty of Technology and Industry, I have experience
+               building dynamic, responsive websites using{" "}
+               {techStack.map((index) => (
+                  <Tooltip
+                     image={index.image}
+                     label={index.label}
+                     key={index.label}
+                  />
+               ))}
+               Skilled in designing interactive interfaces, implementing CRUD
+               functionality, and solving problem for stakeholder also creating
+               great user experience for modern web applications.
+            </div>
+         </section>
          <section
             id="pengalaman"
-            className="px-6 lg:px-40 pt-10 flex flex-col justify-center items-center"
+            className="px-6 lg:px-40 pt-24 flex flex-col justify-center items-center"
          >
             <div className="pt-10 flex flex-col gap-4 w-full ">
                <h1 className="text-center text-xl">
                   Sneak Peak <br />
-                  <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-yellow-300 font-bold">
+                  <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-emerald-300 font-bold">
                      My Experience
                   </span>
                </h1>
-               <div className="grid grid-cols-1 md:grid-cols-7 gap-6">
-                  <div className="md:col-span-3 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border border-gray-600/80 rounded-2xl p-4">
+               <div className="grid gap-6">
+                  <div className="md:col-span-4 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border-l-8 border-purple-500 rounded-2xl p-4">
                      <h2 className="text-gray-400 mb-4">Education :</h2>
                      <div className="flex flex-col gap-3">
                         <CardExperience
@@ -73,18 +100,25 @@ export default function Home() {
                            instansi="Institut Teknologi Sumatera"
                            tglExperience="Aug 2021 - Aug 2025"
                         />
+                     </div>
+                  </div>
+                  <div className="md:col-span-4 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border-l-8 border-purple-500 rounded-2xl p-4">
+                     <h2 className="text-gray-400 mb-4">Experience :</h2>
+                     <div className="flex flex-col gap-3">
+                        <CardExperience
+                           imgSrc="/favicon.ico"
+                           imgAlt=""
+                           label="Frontend Developer"
+                           instansi="PT. Jann Azzam Mandiri"
+                           tglExperience="Feb 2024 - Jul 2024"
+                        />
                         <CardExperience
                            imgSrc="/logo_celerates.svg"
                            imgAlt="Logo Celerates School"
-                           label="Web Development & UI/UX"
+                           label="UI Design & Frontend Developer"
                            instansi="Celerates School"
                            tglExperience="Feb 2024 - Jul 2024"
                         />
-                     </div>
-                  </div>
-                  <div className="md:col-span-4 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border border-gray-600/80 rounded-2xl p-4 max-h-80 overflow-y-scroll custom-scrollbar">
-                     <h2 className="text-gray-400 mb-4">Experience :</h2>
-                     <div className="flex flex-col gap-3">
                         <CardExperience
                            imgSrc="/logo_hmif.jpeg"
                            imgAlt="Logo HMIF"
@@ -111,8 +145,8 @@ export default function Home() {
          >
             <div className="text-start mb-12">
                <h1 className="text-xl text-gray-400">enjoy</h1>
-               <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-yellow-300 font-bold">
-                  My Projects
+               <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-emerald-300 font-bold">
+                  My Recent Work
                </span>
             </div>
 
@@ -128,7 +162,7 @@ export default function Home() {
             <div className="pt-10 flex flex-col gap-4 w-full">
                <h1 className="text-center text-xl">
                   c&apos;mon <br />
-                  <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-yellow-300 font-bold">
+                  <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-emerald-300 font-bold">
                      Contact Me
                   </span>
                </h1>
