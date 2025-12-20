@@ -13,12 +13,11 @@ const Tooltip = ({ label, image }: TooltipProps) => {
    return (
       <div className="relative group inline-block">
          <span
-            className="cursor-pointer text-base text-gray-400 hover:text-transparent w-fit hover:bg-clip-text hover:bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-300 transition-colors ease-linear mr-1 border-b border-b-purple-500"
+            className="cursor-pointer text-base text-emerald-400 hover:text-transparent w-fit hover:bg-clip-text hover:bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-300 transition-colors ease-linear mr-1 border-b border-b-purple-500"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
          >
             {label}
-            
          </span>
 
          <div

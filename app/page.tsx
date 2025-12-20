@@ -32,13 +32,13 @@ export default function Home() {
                      do.
                   </span>
                </div>
-               <Image
+               {/* <Image
                   className="rounded-full object-cover object-top h-48 mx-auto mb-2"
                   src="/profile-picture.png"
                   alt="Logo"
                   width={200}
                   height={150}
-               />
+               /> */}
             </div>
 
             <div className="flex max-w-fit pt-28">
@@ -55,7 +55,7 @@ export default function Home() {
             id="intro"
             className="bg-gradient-to-t from-slate-950/10 to-slate-950/100 border-t-8 border-b-8 border-purple-500 rounded-2xl mx-6 lg:mx-40 py-10 flex flex-col justify-center items-center"
          >
-            <h1 className="text-center">
+            <h1 className="text-center font-be_vietnam_pro">
                Hi! <br />
                <span className="text-2xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-yellow-300 font-bold">
                   I&apos;m, Henry Carnegie
@@ -63,9 +63,9 @@ export default function Home() {
             </h1>
             <div className="text-gray-100 text-base text-center max-w-[65rem] leading-8 mt-2">
                I’m Henry Carnegie, a Software Developer and UI/UX Designer.
-               Currently pursuing my studies at Institut Teknologi Sumatera
-               (ITERA), Faculty of Technology and Industry, I have experience
-               building dynamic, responsive websites using{" "}
+               Freshgraduate Bachelor of Informatics Engineering in Institut
+               Teknologi Sumatera (ITERA), I have experience building dynamic,
+               responsive websites using{" "}
                {techStack.map((index) => (
                   <Tooltip
                      image={index.image}
@@ -83,7 +83,7 @@ export default function Home() {
             className="px-6 lg:px-40 pt-24 flex flex-col justify-center items-center"
          >
             <div className="pt-10 flex flex-col gap-4 w-full ">
-               <h1 className="text-center text-xl">
+               <h1 className="font-be_vietnam_pro text-center text-xl">
                   Sneak Peak <br />
                   <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-emerald-300 font-bold">
                      My Experience
@@ -144,14 +144,34 @@ export default function Home() {
             className="px-6 lg:px-40 py-20 flex flex-col justify-center bg-gradient-to-b from-gray-950 via-gray-900 to-black"
          >
             <div className="text-start mb-12">
-               <h1 className="text-xl text-gray-400">enjoy</h1>
-               <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-emerald-300 font-bold">
+               <h1 className="font-be_vietnam_pro text-xl text-gray-400">enjoy</h1>
+               <span className="font-be_vietnam_pro text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-emerald-300 font-bold">
                   My Recent Work
                </span>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-               <CardProject />
+               <CardProject
+                  id={1}
+                  srcImage="/project/harmony.png"
+                  altImage="Thesis"
+                  projectName="Harmony FTI ITERA"
+                  description="A project developed for Thesis. Harmony FTI ITERA is a web-based application designed to facilitate the management and organization of thesis-related activities within the Faculty of Information Technology at Institut Teknologi Sumatera (ITERA)."
+               />
+               <CardProject
+                  id={1}
+                  srcImage="/project/treasurehunt.png"
+                  altImage="Treasure Hunt"
+                  projectName="Treasure Hunt"
+                  description="A project developed for challenge event. Treasure Hunt is an engaging web application designed to provide users with an interactive and adventurous experience as they embark on a virtual treasure hunt journey."
+               />
+               <CardProject
+                  id={1}
+                  srcImage="/project/texas-college.png"
+                  altImage="Texas College"
+                  projectName="Texas College"
+                  description="A project developed for Client. Texas College is a learning management system designed to provide an interactive and engaging educational experience. It offers a variety of features to facilitate online learning, including course management, student enrollment, and progress tracking."
+               />
             </div>
          </section>
 
@@ -160,7 +180,7 @@ export default function Home() {
             className="px-6 lg:px-40 pt-10 flex flex-col justify-center items-center"
          >
             <div className="pt-10 flex flex-col gap-4 w-full">
-               <h1 className="text-center text-xl">
+               <h1 className="!font-be_vietnam_pro text-center text-xl">
                   c&apos;mon <br />
                   <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-emerald-300 font-bold">
                      Contact Me
@@ -172,7 +192,7 @@ export default function Home() {
                      <form
                         action="mailto:henrycarnegie23@gmail.com"
                         method="POST"
-                        className="flex flex-col gap-4"
+                        className="grid grid-cols-2 gap-4"
                      >
                         <div className="flex flex-col">
                            <InputLabel labelFor="name">Your Name?</InputLabel>
@@ -203,9 +223,9 @@ export default function Home() {
                            />
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="col-span-2 flex flex-col">
                            <InputLabel labelFor="message">
-                              Write your intention?
+                              Tell me what you need?
                            </InputLabel>
                            <TextInput
                               textArea
@@ -217,7 +237,7 @@ export default function Home() {
 
                         <button
                            type="submit"
-                           className="bg-purple-700 hover:bg-gradient-to-tl from-indigo-700 via-purple-700 to-pink-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+                           className="col-span-2 bg-purple-700 hover:bg-gradient-to-tl from-indigo-700 via-purple-700 to-pink-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
                         >
                            Send Message
                         </button>

@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
-         <body className={`${asap.className} ${be_vietnam_pro.className} antialiased`}>
+         <body className={`${asap.className} ${be_vietnam_pro.className} antialiased scroll-smooth`}>
             {children}
          </body>
       </html>
