@@ -1,29 +1,12 @@
 "use client";
 
+import React from "react";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useHeader } from "../hooks/useHeader";
 
-type HeaderProps = {
-   dataHeader: HeaderItem[];
-};
-
-type HeaderItem = {
-   toSection: string;
-   label: string;
-};
-
-const Header = ({ dataHeader }: HeaderProps) => {
-   const [isMobile, setIsMobile] = useState(false);
-
-   const [open, setOpen] = useState(false);
-
-   useEffect(() => {
-      const cekMobile = () => setIsMobile(window.innerWidth <= 768);
-      cekMobile();
-      window.addEventListener("resize", cekMobile);
-      return () => window.removeEventListener("resize", cekMobile);
-   }, []);
+const Header = () => {
+   const { isMobile, open, setOpen } = useHeader();
    return (
       <div className={`relative h-16 z-40 ${isMobile ? "mx-0" : "mx-10"}`}>
          <div className="fixed z-40 top-0 left-0 inset-0 h-16 flex justify-between items-center rounded-full bg-gradient-to-t from-slate-950/10 to-slate-950/100 border border-gray-600/80 py-4 px-6 mx-4 lg:mx-10 mt-4">
@@ -35,17 +18,12 @@ const Header = ({ dataHeader }: HeaderProps) => {
                      onClick={() => setOpen(true)}
                   />
                ) : (
-                  <>
-                     {dataHeader.map((index) => (
-                        <Link
-                           href={index.toSection}
-                           key={index.label}
-                           className="text-sm text-gray-400 hover:text-transparent w-fit hover:bg-clip-text hover:bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-300 cursor-pointer  transition-colors ease-linear"
-                        >
-                           {index.label}
-                        </Link>
-                     ))}
-                  </>
+                     <Link
+                        href="/contact"
+                        className="text-sm text-gray-400 hover:text-transparent w-fit hover:bg-clip-text hover:bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-300 cursor-pointer  transition-colors ease-linear"
+                     >
+                        Contact
+                     </Link>
                )}
             </div>
          </div>
@@ -62,15 +40,12 @@ const Header = ({ dataHeader }: HeaderProps) => {
             }`}
          >
             <div className="flex flex-col gap-4 p-5">
-               {dataHeader.map((index) => (
-                  <Link
-                     href={index.toSection}
-                     key={index.label}
-                     className="text-sm text-gray-400 hover:text-transparent w-fit hover:bg-clip-text hover:bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-300 cursor-pointer transition-colors ease-linear"
-                  >
-                     {index.label}
-                  </Link>
-               ))}
+               <Link
+                  href="/contact"
+                  className="text-sm text-gray-400 hover:text-transparent w-fit hover:bg-clip-text hover:bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-300 cursor-pointer  transition-colors ease-linear"
+               >
+                  Contact
+               </Link>
             </div>
          </div>
       </div>

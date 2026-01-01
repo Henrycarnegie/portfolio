@@ -7,7 +7,7 @@ type DialogProps = {
    title?: string;
    children: React.ReactNode;
    onClose: () => void;
-  };
+};
 
 const Dialog = ({ isOpen, onClose, title, children }: DialogProps) => {
    if (!isOpen) return null;
@@ -19,20 +19,24 @@ const Dialog = ({ isOpen, onClose, title, children }: DialogProps) => {
             onClick={onClose}
          />
 
-         <div className="relative z-10 w-full max-w-md bg-gray-900 border border-gray-700 rounded-2xl shadow-lg p-6">
-            <div className="flex justify-between items-center mb-4">
-               {title && (
-                  <h2 className="text-lg font-semibold text-white">{title}</h2>
-               )}
-               <button
-                  onClick={onClose}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-               >
-                  ✕
-               </button>
-            </div>
+         <div className="relative z-10 w-full md:max-w-md lg:max-w-6xl bg-gray-900 border border-gray-700 rounded-2xl shadow-lg">
+            <div className="grid grid-cols-3 items-center mb-4 border-b border-gray-700 p-6">
+               <div></div>
 
-            <div className="text-gray-300">{children}</div>
+               <h2 className="text-lg font-semibold text-white text-center">
+                  {title}
+               </h2>
+
+               <div className="flex justify-end">
+                  <button
+                     onClick={onClose}
+                     className="text-gray-400 hover:text-white"
+                  >
+                     ✕
+                  </button>
+               </div>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4">{children}</div>{" "}
          </div>
       </div>
    );
