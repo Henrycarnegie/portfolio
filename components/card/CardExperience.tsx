@@ -22,7 +22,7 @@ const CardExperience = ({
       <BaseCard className="flex items-center justify-between p-2 border-gray-600/80 bg-gradient-to-t from-slate-950/10 to-slate-950/100">
          <div className="flex items-center gap-2">
             <Image
-               src={imgSrc}
+               src={imgSrc ?? "/favicon.ico"}
                alt={imgAlt}
                width={40}
                height={40}

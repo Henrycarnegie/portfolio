@@ -11,6 +11,7 @@ type Project = {
    srcImage?: string;
    altImage: string;
    projectName: string;
+   techStack: string[];
    description: string;
 };
 
@@ -19,6 +20,7 @@ const CardProject = ({
    srcImage,
    altImage,
    projectName,
+   techStack,
    description,
 }: Project) => {
    const { openProject, open, close } = useProjectDialog();
@@ -46,7 +48,14 @@ const CardProject = ({
                <PrimaryButton
                   className="bg-transparent hover:bg-none !px-0"
                   onClick={() =>
-                     open({ id, srcImage, altImage, projectName, description })
+                     open({
+                        id,
+                        srcImage,
+                        altImage,
+                        projectName,
+                        techStack,
+                        description,
+                     })
                   }
                >
                   View Project →
@@ -61,14 +70,30 @@ const CardProject = ({
                      src={openProject.srcImage ?? "favicon.ico"}
                      alt={openProject.altImage}
                      width={1000}
-                     height={10000}
+                     height={100}
                      className="w-full rounded-lg object-contain"
                   />
                </div>
 
-                  <p className="text-gray-300 text-base mt-5">
+               <div className="flex flex-col gap-2 mt-2">
+                  <span>Build With:</span>
+                  <div className="flex flex-wrap gap-2">
+                     {openProject.techStack.map((tech) => (
+                        <span
+                           key={tech}
+                           className="flex items-center rounded-full bg-emerald-400/10 px-3 py-1 text-sm font-medium leading-5 text-emerald-300"
+                        >
+                           {tech}
+                        </span>
+                     ))}
+                  </div>
+               </div>
+               <div className="flex flex-col gap-1 mt-5">
+                  <span>Description Project:</span>
+                  <p className="text-gray-300 text-base text-justify leading-6">
                      {openProject.description}
                   </p>
+               </div>
             </Dialog>
          )}
       </>

@@ -5,6 +5,7 @@ type Project = {
    srcImage?: string;
    altImage: string;
    projectName: string;
+   techStack: string[];
    description: string;
 };
 

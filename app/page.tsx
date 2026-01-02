@@ -6,7 +6,6 @@ import CardExperience from "@/components/card/CardExperience";
 import CardProject from "@/components/card/CardProject";
 
 export default function Home() {
-
    return (
       <main className="min-h-screen flex flex-col bg-gray-950 text-gray-300 py-4">
          <Header />
@@ -46,11 +45,18 @@ export default function Home() {
                   I&apos;m, Henry Carnegie
                </span>
             </h1>
-            <div className="text-gray-100 text-base text-center max-w-[65rem] leading-8 mt-2">
-               I’m Henry Carnegie, a Software Developer and UI/UX Designer.
-               Freshgraduate Bachelor of Informatics Engineering in Institut
-               Teknologi Sumatera (ITERA), I have experience building dynamic,
-               responsive websites using{" "}
+            <div className="text-gray-100 text-base text-justify max-w-[65rem] leading-8 mt-2">
+               Hello! My name is Henry Carnegie, and I enjoy creating beautifull
+               things that goes around internet. My interest in web development
+               started back when i join college and try creating my portfolio
+               website — Fast-forward to today, I&apos;ve been graduated with
+               Bachelor of Computer Science Degree. My main focus these days is
+               building digital experience for client and Pursue master degree
+               for my academic. 
+               <br />
+               <br />
+               I have experience building dynamic, responsive
+               websites using{" "}
                {techStack.map((index) => (
                   <Tooltip
                      image={index.image}
@@ -129,7 +135,9 @@ export default function Home() {
             className="px-6 lg:px-40 py-20 flex flex-col justify-center bg-gradient-to-b from-gray-950 via-gray-900 to-black"
          >
             <div className="text-start mb-12">
-               <h1 className="font-be_vietnam_pro text-xl text-gray-400">enjoy</h1>
+               <h1 className="font-be_vietnam_pro text-xl text-gray-400">
+                  enjoy
+               </h1>
                <span className="font-be_vietnam_pro text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-400 to-emerald-300 font-bold">
                   My Recent Work
                </span>
@@ -141,6 +149,7 @@ export default function Home() {
                   srcImage="/project/harmony.png"
                   altImage="Thesis"
                   projectName="Harmony FTI ITERA"
+                  techStack={["React.js", "Laravel", "Tailwind CSS", "Google API"]}
                   description="A project developed for Thesis. Harmony FTI ITERA is a web-based application designed to facilitate the management and organization of thesis-related activities within the Faculty of Information Technology at Institut Teknologi Sumatera (ITERA)."
                />
                <CardProject
@@ -148,19 +157,19 @@ export default function Home() {
                   srcImage="/project/treasurehunt.png"
                   altImage="Treasure Hunt"
                   projectName="Treasure Hunt"
-                  description="A project developed for challenge event. Treasure Hunt is an engaging web application designed to provide users with an interactive and adventurous experience as they embark on a virtual treasure hunt journey."
+                  techStack={["Laravel", "MySQL", "Tailwind CSS"]}
+                  description="A project developed for challenge event. Treasure Hunt is an engaging web application designed to provide users with an interactive and adventurous experience as they embark on a virtual treasure hunt journey. The platform offers a series of clues, puzzles, and challenges that users must solve to progress through various levels and ultimately discover hidden treasures. Treasure Hunt combines elements of gamification, problem-solving, and exploration to create an immersive and entertaining experience for users of all ages."
                />
                <CardProject
                   id={1}
                   srcImage="/project/texas-college.png"
                   altImage="Texas College"
                   projectName="LMS Texas College"
+                  techStack={["Laravel", "MySQL", "Tailwind CSS"]}
                   description="A project developed for Client. Texas College is a learning management system designed to provide an interactive and engaging educational experience. It offers a variety of features to facilitate online learning, including course management, student enrollment, and progress tracking."
                />
             </div>
          </section>
-
-         
       </main>
    );
 }
