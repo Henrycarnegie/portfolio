@@ -40,7 +40,7 @@ export default function Home() {
             className="mx-6 md:mx-14 xl:mx-80 py-10 bg-gradient-to-t from-slate-950/10 to-slate-950/100 border-t-8 border-purple-500 rounded-2xl flex flex-col justify-center items-center"
          >
             <div className="flex justify-between">
-               <div className="w-[60%] flex flex-col gap-4">
+               <div className="md:w-[60%] flex flex-col gap-4">
                   <h1 className="text-center text-sm font-be_vietnam_pro">
                      something <br />
                      <span className="text-2xl text-transparent bg-clip-text bg-gradient-to-r w-fit from-purple-500 via-pink-400 to-yellow-300 font-bold">

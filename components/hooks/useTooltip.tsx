@@ -1,10 +1,12 @@
 import { useState } from "react";
 
 export const useTooltip = () => {
-   const [hover, setHover] = useState(false);
+   const [open, setOpen] = useState(false);
 
-   const onMouseEnter = () => setHover(true);
-   const onMouseLeave = () => setHover(false);
+   const onMouseEnter = () => setOpen(true);
+   const onMouseLeave = () => setOpen(false);
 
-   return { hover, onMouseEnter, onMouseLeave };
+   const onClick = () => setOpen((prev) => !prev);
+
+   return { open, onMouseEnter, onMouseLeave, onClick };
 };

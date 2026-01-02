@@ -1,6 +1,6 @@
 const techStack = [
    {
-      label: "NextJs,",
+      label: "NextJs",
       image: (
          <svg
             viewBox="0 0 512 512"
@@ -52,7 +52,7 @@ const techStack = [
       ),
    },
    {
-      label: "ReactJs,",
+      label: "ReactJs",
       image: (
          <svg
             version="1.1"
@@ -108,7 +108,7 @@ const techStack = [
       ),
    },
    {
-      label: "Laravel,",
+      label: "Laravel",
       image: (
          <svg
             version="1.1"
@@ -130,7 +130,7 @@ const techStack = [
       ),
    },
    {
-      label: "Figma,",
+      label: "Figma",
       image: (
          <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +167,7 @@ const techStack = [
       ),
    },
    {
-      label: "TailwindCSS,",
+      label: "TailwindCSS",
       image: (
          <svg
             id="Layer_1"
@@ -189,7 +189,7 @@ const techStack = [
       ),
    },
    {
-      label: "Bootstrap,",
+      label: "Bootstrap",
       image: (
          <svg
             xmlns="http://www.w3.org/2000/svg"
